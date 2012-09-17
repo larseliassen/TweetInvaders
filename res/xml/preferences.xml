@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gSnake="http://gSnake.glowwormapps.com"
+    android:name="com.glowwormapps.spaceinvaders.menu_prefs"
+    android:key="ui"
+    android:title="Space Invaders" >
+    <PreferenceCategory android:title="Appearance" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="backgrounds_on"
+            android:summary="Turn off for a more 'classic' look"
+            android:title="Draw Backgrounds" />
+        <ListPreference 
+            android:title="Colour Scheme" 
+            android:summary="Choose the colour scheme used for game objects"
+            android:key="colour_scheme"
+            android:defaultValue="1"
+            android:entries="@array/colour_schemes"
+            android:entryValues="@array/colour_schemes"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Sounds" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="play_sounds"
+            android:summary="Should the game have sound"
+            android:title="Play Sound" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Gameplay" >
+            <com.glowwormapps.spaceinvaders.SeekBarPreference
+            	android:key="starting_level"
+                android:title="Starting Level"
+                android:summary="Increase for a more challenging game"
+                android:defaultValue="3"
+                android:max="8"
+                gSnake:min="1"
+           		gSnake:unitsLeft=""
+                gSnake:unitsRight="" />
+            <com.glowwormapps.spaceinvaders.SeekBarPreference
+            	android:key="starting_lives"
+                android:title="Lives"
+                android:summary="The number of lives the player starts with"
+                android:defaultValue="3"
+                android:max="6"
+                gSnake:min="2"
+           		gSnake:unitsLeft=""
+                gSnake:unitsRight="" />
+        
+    </PreferenceCategory>
+</PreferenceScreen>

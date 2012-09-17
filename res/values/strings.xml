@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, SpaceInvadersActivity!</string>
+    <string name="app_name">Space Invaders</string>
+    <string name="menu_prefs">Preferences</string>
+    <string name="menu_restart">Restart</string>
+    <string name="menu_author">More by this Author</string>
+    <string-array name="colour_schemes">
+        <item>Default</item>
+        <item>Classic</item>
+        <item>Psychadelic</item>
+        <item>Red-volution</item>
+    </string-array>
+</resources>

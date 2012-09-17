@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">              
+    <item android:id="@+id/preferences"
+          android:icon="@drawable/menu_preferences"
+          android:title="@string/menu_prefs" />   
+    <item android:id="@+id/restart"
+          android:icon="@drawable/menu_restart"
+          android:title="@string/menu_restart" />  
+    <item android:id="@+id/author"
+          android:icon="@drawable/menu_author"
+          android:title="@string/menu_author" />      
+</menu>
