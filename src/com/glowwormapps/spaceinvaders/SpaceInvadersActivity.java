@@ -57,6 +57,7 @@ import android.view.View;
 public class SpaceInvadersActivity extends Activity {
 	/** Called when the activity is first created. */
 
+	@SuppressWarnings("unused")
 	private static final String TAG = "SpaceInvadersActivity";
 
 	private InvaderView mView = null;
@@ -91,17 +92,19 @@ public class SpaceInvadersActivity extends Activity {
 		mEvent = new InvaderTimer();
 		mUpdate.schedule(mEvent, 0, 80);
 
-		// The factory instance is re-useable and thread safe.
+	}
+
+	private String hentTweet() {
 		try {
 			Twitter twitter = new TwitterFactory().getInstance();
 			Query query = new Query("test");
 			QueryResult result = twitter.search(query);
-			for (Tweet tweet : result.getTweets()) {
-				Log.i(TAG, tweet.getFromUser() + ":" + tweet.getText());
-			}
+			Random random = new Random();
+			int randomInt = random.nextInt(result.getTweets().size());
+			Tweet tweet = result.getTweets().get(randomInt);
+			return tweet.getText();
 		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return "";
 		}
 	}
 
@@ -223,6 +226,9 @@ public class SpaceInvadersActivity extends Activity {
 			loadSounds();
 
 			resetInvaders();
+			String tweet = hentTweet();
+			Log.i(TAG, "TWEET: " + tweet);
+
 			if (mDrawBackgrounds) {
 				mSplash = BitmapFactory.decodeResource(getResources(), R.drawable.splash);
 			} else {
