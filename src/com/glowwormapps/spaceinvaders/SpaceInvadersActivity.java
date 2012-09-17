@@ -21,6 +21,7 @@
 package com.glowwormapps.spaceinvaders;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -227,7 +228,10 @@ public class SpaceInvadersActivity extends Activity {
 
 			resetInvaders();
 			String tweet = hentTweet();
+			char[] tweetArray = tweet.toCharArray();
+
 			Log.i(TAG, "TWEET: " + tweet);
+			Log.i(TAG, "TWEET: " + Arrays.toString(tweetArray));
 
 			if (mDrawBackgrounds) {
 				mSplash = BitmapFactory.decodeResource(getResources(), R.drawable.splash);
